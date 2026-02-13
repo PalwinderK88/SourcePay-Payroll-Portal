@@ -1,0 +1,3 @@
+contractor_id,contractor_name,period_type,week_number,month,year,filename
+5,Test Contractor,weekly,1,,2024,
+5,Test Contractor,monthly,,January,2024,

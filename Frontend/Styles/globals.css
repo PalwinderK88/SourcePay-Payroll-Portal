@@ -1,0 +1,249 @@
+/* Global Styles for Payroll Portal - SourcePay International */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* SourcePay Brand Colors */
+:root {
+  --sourcepay-dark: #2C3E2E;
+  --sourcepay-olive: #6B7C5D;
+  --sourcepay-light: #a8b5a1;
+  --sourcepay-bg: #f5f7fa;
+}
+
+/* Animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sourcepay-olive);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sourcepay-dark);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* Focus States */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Button Styles */
+button {
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Input Styles */
+input, select {
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Table Styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f9fafb;
+  text-align: left;
+  font-weight: 600;
+  color: var(--sourcepay-dark);
+}
+
+tr:hover {
+  background-color: #f9fafb !important;
+}
+
+/* Utility Classes */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Card Hover Effects */
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
+}
+
+/* Action Button Hover */
+.action-button:hover {
+  background-color: #f3f4f6 !important;
+  border-color: var(--sourcepay-olive) !important;
+}
+
+/* Download Button Hover */
+.download-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(44, 62, 46, 0.3) !important;
+}
+
+/* Tab Hover */
+.tab:hover {
+  background-color: rgba(107, 124, 93, 0.05);
+}
+
+/* Feature Item Hover (Login Page) */
+.feature-item-hover {
+  transition: transform 0.3s ease;
+}
+
+.feature-item-hover:hover {
+  transform: translateX(5px);
+}
+
+/* Input Focus States */
+.input-field:focus {
+  border-color: var(--sourcepay-olive) !important;
+  box-shadow: 0 0 0 3px rgba(107, 124, 93, 0.1) !important;
+}
+
+/* Submit Button Hover */
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(44, 62, 46, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .overview-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  header, button, .no-print {
+    display: none !important;
+  }
+}
+
+/* Hide Next.js Development Indicators - Comprehensive */
+#__next-build-watcher,
+#__next-prerender-indicator,
+.__next-prerender-indicator,
+nextjs-portal,
+[data-nextjs-scroll-focus-boundary],
+div[style*="position: fixed"][style*="bottom: 10px"][style*="left: 10px"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Hide any fixed positioned element in bottom left corner (Next.js indicator) */
+body > div[style*="position: fixed"][style*="bottom"][style*="left"] {
+  display: none !important;
+}
+
+/* Additional Next.js dev mode indicators */
+#__next > div[style*="position: fixed"][style*="z-index: 9000"] {
+  display: none !important;
+}
